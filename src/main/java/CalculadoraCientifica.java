@@ -1,5 +1,16 @@
+import java.util.Scanner;
+
 public class CalculadoraCientifica {
-    public static void main(String[] args) {
-        System.out.println("holi");
+   //implementa una clase cuadrado para no confundir entre codigos
+    static class Cuadrado {
+        public static double calcularPerimetro(double lado) {
+            return 4*lado;
+        }
+
+        public static double calcularArea(double lado) {
+            return lado*lado;
+        }
+         
     }
 }
+
