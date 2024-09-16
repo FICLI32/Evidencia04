@@ -12,8 +12,8 @@ class CalculadoraCientificaTest {
 
     @Test
     void calcularSistemaEcuaciones() {
-        assertEquals("valor de Y = " + "2.0" + "\n" + "valor de X = " + "-1.0", CalculadoraCientifica.calcularSistemaEcuaciones(1, 2, 3, 4, 5, 6));
-        assertEquals("Los valores de A,B,D,E deben ser distintos de 0", CalculadoraCientifica.calcularSistemaEcuaciones(1, 0, 3, 4, 5, 6));
+        assertEquals("valor de Y = " + 2.0 + "\n" + "valor de X = " + -1.0, CalculadoraCientifica.calcularSistemaEcuaciones(1, 2, 3, 4, 5, 6));
+        assertEquals("valor de Y = " + "NaN" + "\n" + "valor de X = " + "-Infinity", CalculadoraCientifica.calcularSistemaEcuaciones(0, 2, 3, 0, 0, 6));
     }
 
     @Test

@@ -3,20 +3,18 @@ import java.lang.reflect.Array;
 public class CalculadoraCientifica {
 
     public static void main(String[] args) {
-        System.out.println(calcularSistemaEcuaciones(-1,-3,5,7,8,9));
+        System.out.println(calcularSistemaEcuaciones(0,2,3,0,0,9));
     }
 
     public static String calcularSistemaEcuaciones(double A, double B, double C, double D, double E, double F) {
         double[] ec1 = inicializarEc1(A, B, C);
         double[] ec2 = inicializarEc2(D, E, F);
-        if (ec1[0] != 0 && ec1[1] != 0 && ec2[0] != 0 && ec2[1] != 0) {
+        try {
             double valorY = despejarY(ec1,ec2);
             double valorX = despejarX(ec1, ec2);
-            String valorYsr = Double.toString(valorY);
-            String valorXsr = Double.toString(valorX);
-            return ("valor de Y = "+ valorYsr  + "\n" + "valor de X = " + valorXsr);
-        } else {
-            return "Los valores de A,B,D,E deben ser distintos de 0";
+            return ("valor de Y = "+ valorY  + "\n" + "valor de X = " + valorX);
+        } catch (ArithmeticException e){
+            return "Error, el sistema no tiene solucion o tiene infintas soluciones";
         }
     }
 
