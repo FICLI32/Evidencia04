@@ -19,9 +19,11 @@ public class CalculadoraCientificaTest {
         double B = 2;
         double C = 5;
 
-        double discriminante = CalculadoraCientifica.calcularDiscriminante(A, B, C);
-        
-        assertEquals(-16, discriminante, "El discriminante debería ser -16 para A=1, B=2, C=5");
+        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> {
+            CalculadoraCientifica.calcularSoluciones(A, B, C);
+        });
+
+        assertEquals("El discriminante es negativo, la ecuación no tiene soluciones reales.", thrown.getMessage());
     }
     
 }
