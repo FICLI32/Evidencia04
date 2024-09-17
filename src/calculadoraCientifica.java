@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class calculadoraCientifica {
     public static void main (String[] args) {
         System.out.println("Maximo entre 2 y 3:"+ mayor(2,3));
